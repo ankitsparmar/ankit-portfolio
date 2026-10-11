@@ -15,7 +15,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* ---------- Intro ---------- */
 .screen{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
-.intro{background:#000;cursor:pointer;position:relative}
+.intro,.profiles{position:fixed;inset:0;z-index:100;overflow-y:auto}
+.intro{background:#000;cursor:pointer}
 .intro-hint{position:absolute;bottom:12vh;left:0;right:0;text-align:center;color:#8c8c8c;font-size:14px;letter-spacing:.08em;animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.35}}
 .intro.go .intro-hint{display:none}
@@ -83,7 +84,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* ---------- Rows ---------- */
 .rows{position:relative;margin-top:-9vh;padding-bottom:30px;z-index:2}
 .row{margin-bottom:44px}
-.row h3{font-size:clamp(18px,1.5vw,22px);font-weight:700;color:#E5E5E5;padding:0 var(--gut);margin-bottom:12px}
+.row h2{font-size:clamp(18px,1.5vw,22px);font-weight:700;color:#E5E5E5;padding:0 var(--gut);margin-bottom:12px}
 .row-wrap{position:relative}
 .track{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px var(--gut) 18px;scrollbar-width:none;scroll-padding:0 var(--gut)}
 .track::-webkit-scrollbar{display:none}
@@ -169,9 +170,29 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* ---------- Contact ---------- */
 .contact{margin:30px var(--gut) 0;padding:56px 48px;border-radius:10px;background:radial-gradient(circle at 90% 10%,rgba(229,9,20,.45),transparent 50%),#1c1c1c}
-.contact h3{font:400 clamp(40px,5vw,64px)/1 var(--display);letter-spacing:.01em}
+.contact h2{font:400 clamp(40px,5vw,64px)/1 var(--display);letter-spacing:.01em}
 .contact p{color:var(--muted);max-width:620px;margin-top:10px;font-size:17px}
 .foot{padding:40px var(--gut);color:var(--dim);font-size:13px}
+.foot a{text-decoration:underline;text-underline-offset:2px}
+.foot a:hover{color:#fff}
+
+/* ---------- Résumé (plain, crawlable) ---------- */
+.resume{margin:56px var(--gut) 0;padding-top:40px;border-top:1px solid var(--line);color:#ccc}
+.resume>h2{font:400 clamp(32px,4vw,48px)/1.05 var(--display);letter-spacing:.01em;color:#fff}
+.resume>p{max-width:860px;margin-top:12px;color:var(--muted);font-size:16px}
+.resume-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;margin-top:32px}
+.resume h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
+.resume h3:not(:first-child){margin-top:28px}
+.cv{list-style:none}
+.cv li{padding:0 0 20px 18px;border-left:2px solid var(--line);position:relative}
+.cv li::before{content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--red)}
+.cv h4{font-size:16px;color:#fff}
+.cv .when{font-size:13px;color:var(--dim);margin:2px 0 6px}
+.cv p{font-size:14.5px;line-height:1.55}
+.cv-list{padding-left:18px;font-size:14.5px}
+.cv-list li{margin:6px 0}
+.cv-skills{font-size:14.5px;line-height:1.8}
+@media (max-width:860px){.resume-grid{grid-template-columns:1fr;gap:8px}}
 
 /* ---------- Responsive ---------- */
 @media (max-width:900px){

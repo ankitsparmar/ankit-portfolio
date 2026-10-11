@@ -52,9 +52,9 @@
     },
     rolling: {
       title: 'Rolling Arrays', sub: 'Consultant · Associate Consultant', art: 'e4', year: '2020', meta: ['Jul 2020 – Jun 2022', 'Mumbai, India', 'APAC clients'],
-      body: '<ul><li><b>The Dairy Farm Group (Hong Kong)</b>: led AMS within SLA, ran requirements workshops, replicated org, cost-centre and employee data between SAP ERP, Employee Central and SFTP with PGP encryption.</li>' +
-            '<li><b>Parkway Hospitals (Singapore)</b>: 21 custom integrations between SuccessFactors, ERP HCM and third parties.</li>' +
-            '<li><b>PPB Group Berhad (Malaysia)</b>: CPI encryption and payroll file processing; time and attendance integrations.</li>' +
+      body: '<ul><li><b>Retail group, Hong Kong</b>: led AMS within SLA, ran requirements workshops and change requests, and replicated org, cost-centre and employee data between SAP ERP, Employee Central and SFTP with PGP encryption.</li>' +
+            '<li><b>Healthcare group, Singapore</b>: 21 custom integrations between SuccessFactors, ERP HCM and third-party vendors.</li>' +
+            '<li><b>Conglomerate, Malaysia</b>: CPI encryption and per-business-unit payroll file processing; time and attendance integrations.</li>' +
             '<li>IAS/IPS SSO, payroll integrations (ADP, CDP, ECP), data lake, RPA and analytics work.</li>' +
             '<li>Groovy, XSLT, splitter/gather, multicast, ProcessDirect, value mappings; SuccessFactors, OData, SOAP, REST, IDoc, SFTP adapters.</li></ul>'
     },
@@ -161,16 +161,15 @@
   var current = null;
 
   function showProfiles() {
-    intro.hidden = true; browse.hidden = true; profiles.hidden = false;
-    document.body.classList.remove('browsing');
-    window.scrollTo(0, 0);
+    intro.hidden = true; profiles.hidden = false;
+    document.body.classList.add('locked');
   }
 
   function showBrowse(pid) {
     current = PROFILES.filter(function (p) { return p.id === pid; })[0] || PROFILES[0];
     store.set('profile', current.id);
-    intro.hidden = true; profiles.hidden = true; browse.hidden = false;
-    document.body.classList.add('browsing');
+    intro.hidden = true; profiles.hidden = true;
+    document.body.classList.remove('locked');
     $('#switchProfile').innerHTML = avatar(current, 32);
     renderRows();
     window.scrollTo(0, 0);
@@ -201,7 +200,7 @@
         var t = typeof x === 'string' ? tile(x) : tile(x.id, x);
         return r.numbered ? '<div class="ranked"><span class="rank">' + (i + 1) + '</span>' + t + '</div>' : t;
       }).join('');
-      return '<section class="row"' + (r.id ? ' id="' + r.id + '"' : '') + '><h3>' + title + '</h3>' +
+      return '<section class="row"' + (r.id ? ' id="' + r.id + '"' : '') + '><h2>' + title + '</h2>' +
         '<div class="row-wrap"><button class="arrow left" aria-label="Scroll left">‹</button>' +
         '<div class="track' + (r.numbered ? ' numbered' : '') + '">' + tiles + '</div>' +
         '<button class="arrow right" aria-label="Scroll right">›</button></div></section>';
@@ -229,7 +228,7 @@
 
   function closeModal() {
     modal.hidden = true;
-    document.body.classList.remove('locked');
+    if (intro.hidden && profiles.hidden) document.body.classList.remove('locked');
     if (lastFocus) lastFocus.focus();
   }
 
@@ -250,7 +249,8 @@
   });
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !modal.hidden) closeModal();
+    if (e.key === 'Escape' && !modal.hidden) return closeModal();
+    if (e.key === 'Escape' && !profiles.hidden) return showBrowse(current.id);
     if ((e.key === 'Enter' || e.key === ' ') && !intro.hidden) { e.preventDefault(); enter(); }
   });
 
@@ -316,5 +316,11 @@
   renderProfiles();
   document.getElementById('y').textContent = new Date().getFullYear();
 
+  // Content is rendered up front (for search engines and no-JS readers); the intro and
+  // profile picker sit on top as overlays.
+  current = PROFILES[0];
+  $('#switchProfile').innerHTML = avatar(current, 32);
+  renderRows();
+  document.body.classList.add('locked');
   intro.addEventListener('click', enter);
 })();
