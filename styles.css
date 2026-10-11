@@ -54,7 +54,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .me .avatar{border-radius:4px}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;height:88vh;min-height:560px;max-height:900px;overflow:hidden;display:flex;align-items:flex-end}
+.hero{position:relative;height:90vh;min-height:680px;max-height:940px;overflow:hidden;display:flex;align-items:flex-end}
 .hero-art{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,#2a0a0c 0%,#0d0d0d 60%)}
 .orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.75;animation:drift 18s ease-in-out infinite alternate}
 .o1{width:46vw;height:46vw;right:-6vw;top:-10vw;background:#B20710}
@@ -72,7 +72,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:15px;color:#ddd}
 .match{color:var(--green);font-weight:700}
 .badge{border:1px solid rgba(255,255,255,.5);padding:0 6px;font-size:12px;border-radius:3px}
-.hero-text{margin-top:16px;font-size:clamp(15px,1.25vw,19px);line-height:1.5;color:#E5E5E5;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.hero-lead{margin-top:18px;font-size:clamp(18px,1.6vw,24px);font-weight:700;line-height:1.35;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.hero-text{margin-top:10px;font-size:clamp(15px,1.25vw,19px);line-height:1.5;color:#E5E5E5;text-shadow:0 2px 8px rgba(0,0,0,.6)}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 .play,.info{display:inline-flex;align-items:center;gap:10px;padding:11px 26px 11px 20px;border-radius:5px;font-weight:700;font-size:17px;transition:opacity .2s}
 .play{background:#fff;color:#000}

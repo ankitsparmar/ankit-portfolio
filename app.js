@@ -15,8 +15,9 @@
   var ITEMS = {
     about: {
       title: 'About Ankit', art: 'a1', meta: ['SAP BTP Technical Architect', 'Lemongrass', 'London, UK'],
-      body: '<p>I help enterprises through their cloud transformation by contributing to cloud architecture, operations, integration and security, and by enabling DevSecOps for SAP BTP solutions.</p>' +
-            '<p>Today I act as technical design authority for BTP, AI and analytics programmes at Lemongrass, sitting between enterprise architecture, delivery teams and business stakeholders. Before that I spent six years across ALDI, McKinsey, Rolling Arrays and Unilever, in India, Germany and now the UK.</p>' +
+      body: '<p>I\'ve spent six years helping organisations move to the cloud and connect their systems, across India, Germany and now the UK, for companies including ALDI, McKinsey and Unilever.</p>' +
+            '<p>My work sits between business and technology: I listen to what a team needs, design a solution that\'s safe and built to last, then help the developers build it. I enjoy turning complicated technology into something that simply works for the people using it.</p>' +
+            '<p>Lately I\'ve been building AI assistants that take on everyday tasks, like answering questions or handling routine admin, and making sure they\'re secure, reliable and stay in human hands.</p>' +
             '<p class="tags"><span>Enterprise Cloud Architecture</span><span>DevSecOps</span><span>Integrations &amp; Extensions</span><span>SAP BTP &amp; AI</span><span>Private &amp; Public Cloud</span></p>'
     },
 
