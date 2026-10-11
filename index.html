@@ -3,243 +3,91 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ankit K. Singh · SAP BTP Technical Architect</title>
-<meta name="description" content="Ankit K. Singh is an SAP BTP Technical Architect at Lemongrass in London, working on BTP architecture, agentic AI with Joule and MCP, integration, DevSecOps and SAP data & analytics.">
-<meta property="og:title" content="Ankit K. Singh · SAP BTP Technical Architect">
+<title>Ankit K Singh · SAP BTP Technical Architect</title>
+<meta name="description" content="Ankit K Singh is an SAP BTP Technical Architect at Lemongrass in London, working on BTP architecture, agentic AI with Joule and MCP, integration, DevSecOps and SAP data & analytics.">
+<meta property="og:title" content="Ankit K Singh · SAP BTP Technical Architect">
 <meta property="og:description" content="SAP BTP architecture, AI agents & MCP, Integration Suite, DevSecOps and data & analytics. London, UK.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0E1A2B">
+<meta name="theme-color" content="#141414">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="gloss" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></linearGradient></defs></svg>
 
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="logo" href="#top">AS<span>.</span></a>
-    <nav>
-      <a href="#now">Now</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+<!-- 1. Intro -->
+<section id="intro" class="screen intro" aria-label="Intro">
+  <button class="intro-name" id="introName" aria-label="Enter site">ANKIT K SINGH</button>
+</section>
+
+<!-- 2. Who's watching -->
+<section id="profiles" class="screen profiles" hidden aria-label="Choose a profile">
+  <h1 class="who">Who's watching?</h1>
+  <div class="profile-grid" id="profileGrid"></div>
+</section>
+
+<!-- 3. Browse -->
+<div id="browse" hidden>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#" data-home>ANKIT K SINGH</a>
+    <nav class="menu">
+      <a href="#row-experience">Experience</a>
+      <a href="#row-skills">Skills</a>
+      <a href="#row-certs">Certifications</a>
+      <a href="#row-projects">Projects</a>
+      <a href="#contact">Hire me</a>
     </nav>
-  </div>
-</header>
-
-<main id="top">
+    <button class="me" id="switchProfile" title="Switch profile" aria-label="Switch profile"></button>
+  </header>
 
   <section class="hero">
-    <div class="wrap">
-      <p class="eyebrow"><span class="dot"></span>London, UK · Lemongrass</p>
-      <h1>Ankit K. Singh</h1>
-      <p class="role">SAP BTP Technical Architect</p>
-      <p class="headline">Enterprise Cloud Architecture · DevSecOps · Integrations &amp; Extensions · SAP BTP &amp; AI</p>
-      <p class="lede">I design secure, clean-core SAP Business Technology Platform landscapes that connect S/4HANA and non-SAP systems, put Joule and custom AI agents to work on real business processes, and give teams trusted, governed data for planning and reporting.</p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:getankitparmar@gmail.com">Get in touch</a>
-        <a class="btn" href="https://www.linkedin.com/in/ankitsinghparmar/" target="_blank" rel="noopener">LinkedIn ↗</a>
-      </div>
-      <dl class="stats">
-        <div><dt>6+</dt><dd>years in SAP technology</dd></div>
-        <div><dt>3</dt><dd>countries: India, Germany &amp; the UK</dd></div>
-        <div><dt>2×</dt><dd>new SAP certifications in 2026: CAP &amp; Generative AI</dd></div>
-      </dl>
+    <div class="hero-art" aria-hidden="true">
+      <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+      <div class="grid-lines"></div>
     </div>
-  </section>
-
-  <section id="now" class="section">
-    <div class="wrap">
-      <h2 class="h2"><span class="num">01</span>What I work on now</h2>
-      <p class="section-lede">As technical design authority for BTP, AI and analytics programmes, I sit between enterprise architecture, delivery teams and business stakeholders.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>BTP architecture &amp; governance</h3>
-          <p>Global account and subaccount strategy, Cloud Foundry and Kyma runtimes, clean-core side-by-side extensions with CAP, ABAP Cloud, SAP Build and Fiori. Security with IAS/IPS, XSUAA and principal propagation; architecture decision records and design-review gates.</p>
-        </article>
-        <article class="card">
-          <h3>AI agents &amp; generative AI</h3>
-          <p>Joule and Joule Agents, custom skills in Joule Studio, SAP AI Core and the Generative AI Hub. Retrieval-augmented generation on HANA Cloud Vector Engine, with guardrails: human-in-the-loop approvals, auditability and least-privilege access.</p>
-        </article>
-        <article class="card">
-          <h3>Model Context Protocol</h3>
-          <p>MCP servers that expose SAP business data and actions (OData, CAP services, APIs) as governed tools for AI agents, with agent-to-agent interoperability routed through SAP API Management for security, throttling and observability.</p>
-        </article>
-        <article class="card">
-          <h3>Integration</h3>
-          <p>SAP Integration Suite (Cloud Integration, API Management, Event Mesh) across S/4HANA, SuccessFactors, Ariba and third-party systems.</p>
-        </article>
-        <article class="card">
-          <h3>Data &amp; analytics</h3>
-          <p>The enterprise data layer in SAP Datasphere within Business Data Cloud, and SAP Analytics Cloud for reporting, integrated planning and natural-language analytics with Just Ask and Joule.</p>
-        </article>
-        <article class="card">
-          <h3>DevSecOps &amp; operations</h3>
-          <p>CI/CD and transport management, monitoring with Cloud ALM and OpenTelemetry, and FinOps cost governance on BTP.</p>
-        </article>
-      </div>
-
-      <article class="feature">
-        <p class="sub">Side project</p>
-        <h3>An MCP server for SAP BTP administration</h3>
-        <p>I've been building and using a Model Context Protocol server that lets an AI assistant handle routine BTP admin conversationally instead of through endless cockpit clicks. Today it can:</p>
-        <ul class="checks">
-          <li>Manage entitlements and assign them across multiple subaccounts</li>
-          <li>Run full create, read, update and delete for users and role collections</li>
-          <li>Enable the Cloud Foundry environment and manage subaccount trust configuration</li>
-          <li>Audit users, analyse the global account and report on entitlements</li>
-        </ul>
-        <p class="note">Not there yet: Cloud Foundry spaces and users, directories, service instances, Kyma enablement and role variations from templates. Knowing where the gaps are matters as much as what it automates.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="experience" class="section alt">
-    <div class="wrap">
-      <h2 class="h2"><span class="num">02</span>Experience</h2>
-
-      <ol class="timeline">
-        <li>
-          <div class="when">Apr 2026 – Present</div>
-          <div class="what">
-            <h3>BTP Technical Architect</h3>
-            <p class="org">Lemongrass · London, UK</p>
-            <p>Owning end-to-end design of SAP BTP landscapes, with a focus on agentic AI, Model Context Protocol integration and the SAP data and analytics stack (Datasphere and SAP Analytics Cloud). Turning business goals into roadmaps, estimates and solution designs; mentoring developers and leading proofs of concept.</p>
-          </div>
-        </li>
-        <li>
-          <div class="when">May 2024 – Mar 2026</div>
-          <div class="what">
-            <h3>IT Engineer · BTP Change &amp; Deployment Expert</h3>
-            <p class="org">ALDI DX (ALDI SÜD) · Mülheim an der Ruhr, Germany</p>
-            <ul>
-              <li>Built a change and deployment matrix for all SAP BTP artefacts, applying CI/CD best practices across Work Zone content, SAP-native content types, integrations and applications.</li>
-              <li>Ran change management with GitLab CI/CD and Solution Manager + ChaRM across a multi-region, multi-stage architecture, aligned with ServiceNow release management.</li>
-              <li>Created scalable GitLab pipelines for Cloud Foundry and Kyma deployments; drafted security and governance policies and quality gates for custom applications.</li>
-              <li>Member of the architecture and governance board, advising on DevSecOps and BTP app architecture.</li>
-            </ul>
-            <p class="sub">Initiatives</p>
-            <ul>
-              <li><strong>Flashpipe CI/CD</strong>: GitLab pipelines deploying Integration Suite artefacts (iFlows, value mappings, APIs and dependencies) straight from a central repository.</li>
-              <li><strong>Cloud ALM for operations</strong>: real-user and health monitoring for BTP apps with OpenTelemetry, extended with self-hosted Grafana on Kyma.</li>
-              <li><strong>SAP Frontend application service</strong>: an alternative to HTML5 Repository and app-router deployments, with flexible versioning for frontend apps.</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <div class="when">Jun 2022 – Apr 2024</div>
-          <div class="what">
-            <h3>Software Engineer</h3>
-            <p class="org">McKinsey &amp; Company · Gurugram, India · Finance Cloud Transformation (S/4HANA)</p>
-            <ul>
-              <li>Developed and debugged standard and custom integrations for S/4HANA: document compliance, invoices, HR mini-master replication, payroll and loans outbound; customer and engagement data inbound. Event-driven designs on Event Mesh.</li>
-              <li>Administered the Integration and Extension landscape: security materials, certificates, value mappings, and deployments of CAP projects, Fiori apps, HANA schemas and attribute-based roles to QA and production.</li>
-              <li>Set up SAP CI/CD and Transport Management for DevSecOps, Cloud Connector for on-premise S/4 APIs, and Work Zone launchpads with role-based tiles.</li>
-              <li>Introduced an API Management layer over custom OData APIs on HANA views, with Splunk logging of external API traffic.</li>
-              <li>Co-built a unified CPI monitoring and exception-reprocessing app (CAP, Fiori, CPI, HANA) that went live in production, and proposed Fiori-based bulk end-to-end integration testing.</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <div class="when">Jul 2020 – Jun 2022</div>
-          <div class="what">
-            <h3>Consultant · Associate Consultant</h3>
-            <p class="org">Rolling Arrays · Mumbai, India · SAP CPI &amp; SuccessFactors for clients across APAC</p>
-            <ul>
-              <li><strong>The Dairy Farm Group (Hong Kong)</strong>: led AMS within SLA, ran requirements workshops and change requests, and replicated cost centres, org objects and employee data between SAP ERP, Employee Central and SFTP with PGP encryption.</li>
-              <li><strong>Parkway Hospitals (Singapore)</strong>: delivered 21 custom integrations between SuccessFactors, SAP ERP HCM and third-party vendors.</li>
-              <li><strong>PPB Group Berhad (Malaysia)</strong>: advanced CPI solutions for encryption, file processing and per-business-unit payroll files; time and attendance integrations from SuccessFactors.</li>
-              <li>Also delivered IAS/IPS single sign-on, payroll integrations (ADP, CDP, ECP), and data lake, RPA and analytics work for healthcare, retail and banking clients.</li>
-              <li>Toolkit: Groovy, XSLT, mappings, splitter/gather, multicast, ProcessDirect, value mappings; SuccessFactors, OData, SOAP, REST, IDoc, SFTP and SMTP adapters.</li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <div class="when">Sep 2019 – Apr 2020</div>
-          <div class="what">
-            <h3>R&amp;D IT Associate</h3>
-            <p class="org">Unilever · Bengaluru, India</p>
-            <p>Custom SAP Fiori/UI5 development and OData services, SAP PLM, a BRF+ framework implementation and a proof of concept on costing structures.</p>
-          </div>
-        </li>
-        <li>
-          <div class="when">May – Sep 2019</div>
-          <div class="what">
-            <h3>UX Developer (internship)</h3>
-            <p class="org">UX India (ux-india.org)</p>
-            <p>Built and maintained ux-india.org and umo.design, with wireframes in Adobe XD, graphic design and SEO.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="skills" class="section">
-    <div class="wrap">
-      <h2 class="h2"><span class="num">03</span>Skills</h2>
-      <div class="skills">
-        <div>
-          <h3>Platform &amp; architecture</h3>
-          <ul class="tags"><li>SAP BTP</li><li>Cloud Foundry</li><li>Kyma</li><li>Clean core</li><li>S/4HANA</li><li>HANA Cloud</li><li>Basis</li></ul>
-        </div>
-        <div>
-          <h3>AI &amp; agents</h3>
-          <ul class="tags"><li>Joule &amp; Joule Studio</li><li>SAP AI Core</li><li>Generative AI Hub</li><li>RAG &amp; Vector Engine</li><li>Model Context Protocol</li></ul>
-        </div>
-        <div>
-          <h3>Integration</h3>
-          <ul class="tags"><li>Cloud Integration (CPI)</li><li>API Management</li><li>Event Mesh</li><li>SuccessFactors</li><li>Groovy · XSLT</li><li>Cloud Connector</li></ul>
-        </div>
-        <div>
-          <h3>Development</h3>
-          <ul class="tags"><li>CAP</li><li>Fiori / UI5</li><li>OData</li><li>SAP Build</li><li>Work Zone</li></ul>
-        </div>
-        <div>
-          <h3>DevSecOps &amp; operations</h3>
-          <ul class="tags"><li>GitLab CI/CD</li><li>Flashpipe</li><li>SAP CI/CD &amp; TMS</li><li>Cloud ALM</li><li>Focused Run / SolMan</li><li>OpenTelemetry · Grafana</li></ul>
-        </div>
-        <div>
-          <h3>Security &amp; data</h3>
-          <ul class="tags"><li>IAS / IPS</li><li>XSUAA</li><li>SSO</li><li>Datasphere</li><li>SAP Analytics Cloud</li></ul>
-        </div>
-      </div>
-
-      <div class="edu">
-        <div>
-          <p class="sub">Education</p>
-          <p><strong>B.E. Computer Science &amp; Engineering</strong>, major in Cloud Computing<br>BIST Bhopal · 2016 – 2020</p>
-        </div>
-        <div>
-          <p class="sub">Certifications</p>
-          <ul class="certs">
-            <li><strong>SAP Certified – Backend Developer – SAP Cloud Application Programming Model</strong> · Oct 2026</li>
-            <li><strong>SAP Certified – SAP Generative AI Developer</strong> · Oct 2026</li>
-            <li>SAP Certified Associate – Integration Developer · 2025</li>
-            <li>Rolling Arrays HRTA Certified Professional · 2022</li>
-          </ul>
-        </div>
+    <div class="hero-shade"></div>
+    <div class="hero-body">
+      <p class="series"><span class="mark">AKS</span> ORIGINAL SERIES</p>
+      <h2 class="hero-title">Ankit K Singh</h2>
+      <p class="meta"><span class="match">98% Match</span><span>2019 – Now</span><span class="badge">BTP</span><span>London, UK</span><span class="badge">AI</span></p>
+      <p class="hero-text" id="heroText">SAP BTP Technical Architect at Lemongrass. I design secure, clean-core SAP Business Technology Platform landscapes that connect S/4HANA and non-SAP systems, put Joule and custom AI agents to work on real business processes, and give teams trusted, governed data for planning and reporting.</p>
+      <div class="hero-cta">
+        <a class="play" href="https://www.linkedin.com/in/ankitsinghparmar/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>LinkedIn</a>
+        <button class="info" data-open="about"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>More info</button>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section contact">
-    <div class="wrap">
-      <h2 class="h2"><span class="num">04</span>Let's talk</h2>
-      <p class="big">Planning a BTP landscape, an AI agent rollout or an integration overhaul? I'm happy to compare notes.</p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:getankitparmar@gmail.com">getankitparmar@gmail.com</a>
-        <a class="btn" href="https://www.linkedin.com/in/ankitsinghparmar/" target="_blank" rel="noopener">LinkedIn ↗</a>
-      </div>
+  <main class="rows" id="rows"></main>
+
+  <section class="contact" id="contact">
+    <h3>Let's build something on BTP</h3>
+    <p>Planning a BTP landscape, an AI agent rollout or an integration overhaul? I'm happy to compare notes.</p>
+    <div class="hero-cta">
+      <a class="play" href="mailto:getankitparmar@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>getankitparmar@gmail.com</a>
+      <a class="info" href="https://www.linkedin.com/in/ankitsinghparmar/" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
   </section>
 
-</main>
+  <footer class="foot">© <span id="y">2026</span> Ankit K Singh · London</footer>
+</div>
 
-<footer class="foot">
-  <div class="wrap">© <span id="y">2026</span> Ankit K. Singh · London</div>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<!-- Detail modal -->
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal-backdrop" data-close></div>
+  <article class="modal-card">
+    <button class="modal-x" data-close aria-label="Close">×</button>
+    <div class="modal-art" id="mArt"><h3 id="mTitle"></h3></div>
+    <div class="modal-body">
+      <p class="meta" id="mMeta"></p>
+      <div id="mBody"></div>
+    </div>
+  </article>
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
