@@ -255,6 +255,18 @@
     if ((e.key === 'Enter' || e.key === ' ') && !intro.hidden) { e.preventDefault(); enter(); }
   });
 
+  var topbar = document.getElementById('topbar'), burger = document.getElementById('burger');
+  function setMenu(open) {
+    topbar.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  burger.addEventListener('click', function () { setMenu(!topbar.classList.contains('open')); });
+  document.getElementById('mainMenu').addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('click', function (e) { if (topbar.classList.contains('open') && !e.target.closest('#topbar')) setMenu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && topbar.classList.contains('open')) setMenu(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 900) setMenu(false); });
+
   window.addEventListener('scroll', function () {
     document.getElementById('topbar').classList.toggle('solid', window.scrollY > 40);
   }, { passive: true });

@@ -43,18 +43,23 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .profile:hover .avatar,.profile:focus-visible .avatar{outline-color:#fff;transform:scale(1.04)}
 
 /* ---------- Top bar ---------- */
-.topbar{position:fixed;inset:0 0 auto 0;z-index:20;height:68px;display:flex;align-items:center;gap:36px;padding:0 var(--gut);
-  background:linear-gradient(180deg,rgba(0,0,0,.75),transparent);transition:background .3s}
-.topbar.solid{background:var(--bg)}
-.brand{font:400 30px/1 var(--display);color:var(--red);letter-spacing:.03em;white-space:nowrap}
-.menu{display:flex;gap:22px;font-size:14px}
-.menu a{color:#E5E5E5;transition:color .2s}
+.topbar{position:fixed;inset:0 0 auto 0;z-index:20;height:68px;display:flex;align-items:center;gap:clamp(16px,2.5vw,36px);padding:0 var(--gut);
+  background:linear-gradient(180deg,rgba(0,0,0,.85),rgba(0,0,0,.35) 70%,transparent);transition:background .3s}
+.topbar.solid,.topbar.open{background:var(--bg);box-shadow:0 1px 0 var(--line)}
+.brand{font:400 clamp(22px,2.4vw,30px)/1 var(--display);color:var(--red);letter-spacing:.03em;white-space:nowrap;flex:none}
+.menu{display:flex;gap:clamp(12px,1.6vw,22px);font-size:14px;min-width:0}
+.menu a{color:#E5E5E5;transition:color .2s;white-space:nowrap}
 .menu a:hover{color:var(--dim)}
-.me{margin-left:auto;display:flex}
+.me{margin-left:auto;display:flex;flex:none}
 .me .avatar{border-radius:4px}
+.burger{display:none;flex:none;width:40px;height:40px;border-radius:6px;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.burger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .2s}
+.topbar.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.topbar.open .burger span:nth-child(2){opacity:0}
+.topbar.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;height:90vh;min-height:680px;max-height:940px;overflow:hidden;display:flex;align-items:flex-end}
+.hero{position:relative;min-height:max(680px,92vh);padding-top:110px;overflow:hidden;display:flex;align-items:flex-end}
 .hero-art{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,#2a0a0c 0%,#0d0d0d 60%)}
 .orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.75;animation:drift 18s ease-in-out infinite alternate}
 .o1{width:46vw;height:46vw;right:-6vw;top:-10vw;background:#B20710}
@@ -197,13 +202,18 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* ---------- Responsive ---------- */
 @media (max-width:900px){
-  .menu{display:none}
+  .burger{display:flex;order:3;margin-left:4px}
+  .me{order:2}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:8px var(--gut) 18px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(0,0,0,.5)}
+  .topbar.open .menu{display:flex}
+  .menu a{font-size:17px;padding:13px 0;border-top:1px solid var(--line)}
+  .menu a:first-child{border-top:0}
 }
 @media (max-width:620px){
   :root{--gut:16px}
   .topbar{height:58px}
   .brand{font-size:24px}
-  .hero{height:auto;min-height:0;padding-top:110px}
+  .hero{min-height:0;padding-top:96px}
   .hero-body{padding-bottom:16vh}
   .hero-shade{background:linear-gradient(0deg,var(--bg) 0%,rgba(20,20,20,.6) 60%,rgba(20,20,20,.3) 100%)}
   .play,.info{font-size:15px;padding:9px 18px 9px 14px}
