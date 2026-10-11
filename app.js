@@ -267,6 +267,28 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && topbar.classList.contains('open')) setMenu(false); });
   window.addEventListener('resize', function () { if (window.innerWidth > 900) setMenu(false); });
 
+  // Map: draw the route when it scrolls into view, link pins and list items
+  var map = document.querySelector('.map');
+  if (map) {
+    if (reduceMotion || !('IntersectionObserver' in window)) { map.classList.add('drawn'); }
+    else {
+      var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { map.classList.add('drawn'); io.disconnect(); } }); }, { threshold: 0.35 });
+      io.observe(map);
+    }
+    var hl = function (key, on) {
+      document.querySelectorAll('.where [data-key="' + key + '"]').forEach(function (el) { el.classList.toggle('hl', on); });
+    };
+    document.querySelectorAll('.where [data-key]').forEach(function (el) {
+      el.addEventListener('mouseenter', function () { hl(el.dataset.key, true); });
+      el.addEventListener('mouseleave', function () { hl(el.dataset.key, false); });
+      el.addEventListener('focus', function () { hl(el.dataset.key, true); });
+      el.addEventListener('blur', function () { hl(el.dataset.key, false); });
+    });
+    document.querySelectorAll('.map .pin').forEach(function (pin) {
+      pin.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openItem(pin.dataset.open); } });
+    });
+  }
+
   window.addEventListener('scroll', function () {
     document.getElementById('topbar').classList.toggle('solid', window.scrollY > 40);
   }, { passive: true });

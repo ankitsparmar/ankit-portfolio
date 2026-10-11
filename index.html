@@ -106,6 +106,7 @@
       <a href="#row-skills">Skills</a>
       <a href="#row-certs">Certifications</a>
       <a href="#row-projects">Projects</a>
+      <a href="#where">Journey</a>
       <a href="#resume">Résumé</a>
       <a href="#contact">Hire me</a>
     </nav>
@@ -132,6 +133,33 @@
   </section>
 
   <main class="rows" id="rows"></main>
+
+  <section class="where" id="where" aria-labelledby="whereTitle">
+    <h2 id="whereTitle">Where I've worked</h2>
+    <p class="where-sub">From Bengaluru to London: five cities, three countries, with client projects across Hong Kong, Singapore and Malaysia along the way. Tap a pin for the story.</p>
+    <div class="map">
+      <img class="map-base" src="map-base.svg" alt="" width="1010" height="570" loading="lazy" decoding="async">
+      <svg class="map-pins" viewBox="110 70 1010 570" role="group" aria-label="Map of cities Ankit K Singh has worked in">
+        <path class="route" d="M777.5 505.8Q746 490 740.4 455.9 M740.4 455.9Q737 407 773 375.3 M773 375.3Q541 157 222.1 136.1 M222.1 136.1Q195 116 167 135.1" pathLength="1"/>
+        <g class="pin minor" data-open="edu" data-key="bhopal" tabindex="0" role="button" aria-label="Bhopal – studied"><circle class="dot" cx="776" cy="420.6" r="5"/><text class="lbl" x="788" y="424.6" text-anchor="start">Bhopal · studied</text></g>
+        <g class="pin minor" data-open="rolling" data-key="hongkong" tabindex="0" role="button" aria-label="Hong Kong – client"><circle class="dot" cx="1064.7" cy="428.7" r="5"/><text class="lbl" x="1052.7" y="432.7" text-anchor="end">Hong Kong · client</text></g>
+        <g class="pin minor" data-open="rolling" data-key="kl" tabindex="0" role="button" aria-label="Kuala Lumpur – client"><circle class="dot" cx="966.7" cy="583.9" r="5"/><text class="lbl" x="954.7" y="577.9" text-anchor="end">Kuala Lumpur · client</text></g>
+        <g class="pin minor" data-open="rolling" data-key="singapore" tabindex="0" role="button" aria-label="Singapore – client"><circle class="dot" cx="983.4" cy="598" r="5"/><text class="lbl" x="995.4" y="612" text-anchor="start">Singapore · client</text></g>
+        <g class="pin" data-open="unilever" data-key="bengaluru" tabindex="0" role="button" aria-label="Bengaluru: Unilever, 2019–20"><circle class="halo" cx="777.5" cy="505.8" r="18"/><circle class="dot" cx="777.5" cy="505.8" r="11"/><text class="num" x="777.5" y="510.3" text-anchor="middle">1</text><text class="lbl" x="799.9" y="502.8" text-anchor="start"><tspan class="city">Bengaluru</tspan><tspan class="org" x="799.9" dy="17">Unilever · 2019–20</tspan></text></g>
+        <g class="pin" data-open="rolling" data-key="mumbai" tabindex="0" role="button" aria-label="Mumbai: Rolling Arrays, 2020–22"><circle class="halo" cx="740.4" cy="455.9" r="18"/><circle class="dot" cx="740.4" cy="455.9" r="11"/><text class="num" x="740.4" y="460.4" text-anchor="middle">2</text><text class="lbl" x="718.0" y="452.9" text-anchor="end"><tspan class="city">Mumbai</tspan><tspan class="org" x="718.0" dy="17">Rolling Arrays · 2020–22</tspan></text></g>
+        <g class="pin" data-open="mckinsey" data-key="gurugram" tabindex="0" role="button" aria-label="Gurugram: McKinsey and Company, 2022–24"><circle class="halo" cx="773" cy="375.3" r="18"/><circle class="dot" cx="773" cy="375.3" r="11"/><text class="num" x="773" y="379.8" text-anchor="middle">3</text><text class="lbl" x="795.4" y="372.3" text-anchor="start"><tspan class="city">Gurugram</tspan><tspan class="org" x="795.4" dy="17">McKinsey &amp; Company · 2022–24</tspan></text></g>
+        <g class="pin" data-open="aldi" data-key="mulheim" tabindex="0" role="button" aria-label="Mülheim an der Ruhr: ALDI DX, 2024–26"><circle class="halo" cx="222.1" cy="136.1" r="18"/><circle class="dot" cx="222.1" cy="136.1" r="11"/><text class="num" x="222.1" y="140.6" text-anchor="middle">4</text><text class="lbl" x="244.5" y="133.1" text-anchor="start"><tspan class="city">Mülheim an der Ruhr</tspan><tspan class="org" x="244.5" dy="17">ALDI DX · 2024–26</tspan></text></g>
+        <g class="pin now" data-open="lemongrass" data-key="london" tabindex="0" role="button" aria-label="London: Lemongrass, 2026 – now"><circle class="halo" cx="167" cy="135.1" r="18"/><circle class="dot" cx="167" cy="135.1" r="11"/><text class="num" x="167" y="139.6" text-anchor="middle">5</text><text class="lbl" x="124" y="182" text-anchor="start"><tspan class="city">London</tspan><tspan class="org" x="124" dy="17">Lemongrass · 2026 – now</tspan></text></g>
+      </svg>
+    </div>
+    <ol class="stops">
+        <li><button class="stop" data-open="lemongrass" data-key="london"><span class="n">5</span><span class="t"><b>London</b><span>Lemongrass · 2026 – now</span></span></button></li>
+        <li><button class="stop" data-open="aldi" data-key="mulheim"><span class="n">4</span><span class="t"><b>Mülheim an der Ruhr</b><span>ALDI DX · 2024–26</span></span></button></li>
+        <li><button class="stop" data-open="mckinsey" data-key="gurugram"><span class="n">3</span><span class="t"><b>Gurugram</b><span>McKinsey &amp; Company · 2022–24</span></span></button></li>
+        <li><button class="stop" data-open="rolling" data-key="mumbai"><span class="n">2</span><span class="t"><b>Mumbai</b><span>Rolling Arrays · 2020–22</span></span></button></li>
+        <li><button class="stop" data-open="unilever" data-key="bengaluru"><span class="n">1</span><span class="t"><b>Bengaluru</b><span>Unilever · 2019–20</span></span></button></li>
+    </ol>
+  </section>
 
   <section class="contact" id="contact">
     <h2>Let's build something on BTP</h2>
