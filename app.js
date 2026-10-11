@@ -251,23 +251,70 @@
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !modal.hidden) closeModal();
-    if ((e.key === 'Enter' || e.key === ' ') && !intro.hidden) { e.preventDefault(); showProfiles(); }
+    if ((e.key === 'Enter' || e.key === ' ') && !intro.hidden) { e.preventDefault(); enter(); }
   });
 
   window.addEventListener('scroll', function () {
     document.getElementById('topbar').classList.toggle('solid', window.scrollY > 40);
   }, { passive: true });
 
+  /* ---------- Intro sound (synthesised, no audio file) ---------- */
+
+  function playBoom() {
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    try {
+      var ctx = new AC(), t = ctx.currentTime + 0.05;
+      var master = ctx.createGain(); master.gain.value = 0.9;
+      var comp = ctx.createDynamicsCompressor();
+      master.connect(comp); comp.connect(ctx.destination);
+
+      // 1. Two deep hits: "ba-DUM"
+      [[0, 0.55, 110], [0.32, 1, 82]].forEach(function (h) {
+        var o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = 'sine';
+        o.frequency.setValueAtTime(h[2] * 2.2, t + h[0]);
+        o.frequency.exponentialRampToValueAtTime(h[2] * 0.5, t + h[0] + 0.5);
+        g.gain.setValueAtTime(0.0001, t + h[0]);
+        g.gain.exponentialRampToValueAtTime(h[1], t + h[0] + 0.015);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + h[0] + 0.9);
+        o.connect(g); g.connect(master); o.start(t + h[0]); o.stop(t + h[0] + 1);
+      });
+
+      // 2. Short filtered-noise thump on each hit
+      var len = Math.floor(ctx.sampleRate * 0.25), buf = ctx.createBuffer(1, len, ctx.sampleRate), d = buf.getChannelData(0);
+      for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 3);
+      [0, 0.32].forEach(function (at, k) {
+        var n = ctx.createBufferSource(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+        n.buffer = buf; f.type = 'lowpass'; f.frequency.value = 900; g.gain.value = k ? 0.6 : 0.35;
+        n.connect(f); f.connect(g); g.connect(master); n.start(t + at);
+      });
+
+      // 3. Warm swelling chord that fades out under the zoom
+      [55, 82.4, 110, 164.8, 220].forEach(function (fq, k) {
+        var o = ctx.createOscillator(), g = ctx.createGain(), f = ctx.createBiquadFilter();
+        o.type = 'sawtooth'; o.frequency.value = fq; o.detune.value = (k % 2 ? 7 : -7);
+        f.type = 'lowpass'; f.frequency.setValueAtTime(300, t + 0.32); f.frequency.exponentialRampToValueAtTime(1800, t + 1.4); f.frequency.exponentialRampToValueAtTime(400, t + 2.8);
+        g.gain.setValueAtTime(0.0001, t + 0.32); g.gain.exponentialRampToValueAtTime(0.06, t + 0.9); g.gain.exponentialRampToValueAtTime(0.0001, t + 2.9);
+        o.connect(f); f.connect(g); g.connect(master); o.start(t + 0.32); o.stop(t + 3);
+      });
+
+      setTimeout(function () { try { ctx.close(); } catch (e) {} }, 3500);
+    } catch (e) {}
+  }
+
+  var entering = false;
+  function enter() {
+    if (entering) return; entering = true;
+    playBoom();
+    intro.classList.add('go');
+    setTimeout(showProfiles, reduceMotion ? 300 : 2500);
+  }
+
   /* ---------- Boot ---------- */
 
   renderProfiles();
   document.getElementById('y').textContent = new Date().getFullYear();
 
-  var saved = store.get('profile');
-  if (saved) {
-    showBrowse(saved);
-  } else {
-    var timer = setTimeout(showProfiles, reduceMotion ? 600 : 2600);
-    $('#introName').addEventListener('click', function () { clearTimeout(timer); showProfiles(); });
-  }
+  intro.addEventListener('click', enter);
 })();

@@ -15,12 +15,18 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* ---------- Intro ---------- */
 .screen{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
-.intro{background:#000}
+.intro{background:#000;cursor:pointer;position:relative}
+.intro-hint{position:absolute;bottom:12vh;left:0;right:0;text-align:center;color:#8c8c8c;font-size:14px;letter-spacing:.08em;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+.intro.go .intro-hint{display:none}
 .intro-name{font:400 clamp(48px,11vw,150px)/1 var(--display);color:var(--red);letter-spacing:.02em;
-  text-shadow:0 0 40px rgba(229,9,20,.35);animation:zoomIn 2.4s cubic-bezier(.2,.7,.1,1) both;transform-origin:center}
+  text-shadow:0 0 40px rgba(229,9,20,.35);transform-origin:center;animation:rise 1.2s ease both}
+.intro.go .intro-name{animation:zoomIn 2.5s cubic-bezier(.2,.7,.1,1) both}
+@keyframes rise{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
 @keyframes zoomIn{
-  0%{opacity:0;transform:scale(.6);filter:blur(12px)}
-  35%{opacity:1;transform:scale(1);filter:blur(0)}
+  0%{opacity:1;transform:scale(1);filter:blur(0)}
+  14%{opacity:1;transform:scale(.94)}
+  28%{opacity:1;transform:scale(1.04)}
   80%{opacity:1;transform:scale(1.08)}
   100%{opacity:0;transform:scale(2.4);filter:blur(4px)}
 }
