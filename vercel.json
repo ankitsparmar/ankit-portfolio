@@ -3,15 +3,95 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "ankitksingh.co.uk" }], "destination": "https://www.ankitksingh.com/$1", "permanent": true },
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.ankitksingh.co.uk" }], "destination": "https://www.ankitksingh.com/$1", "permanent": true },
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "ankitsingh.co.uk" }], "destination": "https://www.ankitksingh.com/$1", "permanent": true },
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.ankitsingh.co.uk" }], "destination": "https://www.ankitksingh.com/$1", "permanent": true },
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "ankitksingh.vercel.app" }], "destination": "https://www.ankitksingh.com/$1", "permanent": true },
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "ankit-portfolio-two-khaki.vercel.app" }], "destination": "https://www.ankitksingh.com/$1", "permanent": true }
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ankitksingh.co.uk"
+        }
+      ],
+      "destination": "https://www.ankitksingh.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.ankitksingh.co.uk"
+        }
+      ],
+      "destination": "https://www.ankitksingh.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ankitsingh.co.uk"
+        }
+      ],
+      "destination": "https://www.ankitksingh.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.ankitsingh.co.uk"
+        }
+      ],
+      "destination": "https://www.ankitksingh.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ankitksingh.vercel.app"
+        }
+      ],
+      "destination": "https://www.ankitksingh.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ankit-portfolio-two-khaki.vercel.app"
+        }
+      ],
+      "destination": "https://www.ankitksingh.com/$1",
+      "permanent": true
+    }
   ],
   "headers": [
-    { "source": "/(.*)\\.(png|svg)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] },
-    { "source": "/(.*)", "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }, { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }] }
+    {
+      "source": "/(.*)\\.png",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
   ]
 }
