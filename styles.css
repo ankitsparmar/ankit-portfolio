@@ -83,3 +83,15 @@ h1{font:700 clamp(44px,8vw,92px)/1 var(--serif);letter-spacing:-.03em;margin:22p
   .timeline>li{grid-template-columns:1fr;gap:6px}
   .section{padding:70px 0}
 }
+.headline{margin-top:14px;font:500 13px var(--mono);color:var(--muted);letter-spacing:.02em}
+.feature{margin-top:28px;background:var(--navy);color:#EEF1F5;border-radius:18px;padding:34px}
+.feature h3{font:600 26px/1.2 var(--serif);margin-bottom:12px}
+.feature .sub{color:#E8B04B;margin-top:0}
+.feature p{color:#C3CCD8;max-width:760px}
+.checks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;margin:18px 0}
+.checks li{padding-left:26px;position:relative;color:#EEF1F5;font-size:15px}
+.checks li::before{content:"✓";position:absolute;left:0;color:#E8B04B;font-weight:700}
+.feature .note{font-size:14px;color:#8E9BAD}
+.certs{list-style:none}
+.certs li{margin:6px 0;font-size:15px}
+@media (max-width:620px){.checks{grid-template-columns:1fr}.feature{padding:24px}}
